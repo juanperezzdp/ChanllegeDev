@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CountTime = () => {
   const initialTime = 30 * 60; // 30 minutos en segundos
   const [timeRemaining, setTimeRemaining] = useState(initialTime);
+  const navigate = useNavigate();
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -14,13 +16,17 @@ const CountTime = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      // Disminuir el tiempo restante en 1 segundo
       setTimeRemaining((prevTime) => prevTime - 1);
     }, 1000);
-
-    // Limpiar el temporizador cuando el componente se desmonta
-    return () => clearInterval(timer);
-  }, []);
+    if (timeRemaining === 0) {
+      clearInterval(timer);
+      alert("Se acabado el tiempo del challenge, Sera cancelado el challenge");
+      navigate("/");
+    }
+    return () => {
+      clearInterval(timer);
+    };
+  }, [timeRemaining, navigate]);
 
   return (
     <div>

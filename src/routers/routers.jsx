@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Form from "../components/Form";
+import Cetificate from "../components/Cetificate";
 
 export const router = createBrowserRouter([
   {
@@ -8,7 +9,11 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/:id",
+    path: "/form",
     element: <Form />,
+  },
+  {
+    path: "/certificate",
+    element: <Cetificate />,
   },
 ]);
