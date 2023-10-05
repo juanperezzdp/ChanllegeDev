@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.container { 
+    background: linear-gradient(180deg, rgba(0, 128, 0, 0) 5%, rgb(0, 0, 0) 100%)
+  }
