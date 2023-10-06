@@ -1,18 +1,20 @@
 import "./index.css";
-import video from "./img/7btrrd.mp4";
+import img from "./img/programadores-que-cooperan-desarrollo-programacion-que-trabajan-oficina-empresa-desarrollo-software_28283-1725.jpg";
 
 const App = () => {
   return (
-    <section className="container h-[110vh] ">
-      <div className=" bg-black bg-opacity-50 w-[100%] h-[110vh]">
-        <video className="absolute -z-10" autoPlay loop controls>
-          <source src={video} type="video/mp4" />
-        </video>
-        <div className="flex items-center justify-center w-[100%] h-[100vh] absolute">
-          <h1 className="text-9xl text-white">Dev</h1>
+    <>
+      <main className="container h-[100vh] ">
+        <div className="absolute -z-10 w-[100%] h-[100vh] overflow-hidden">
+          <img className="w-[100%]" src={img} alt="img" />
         </div>
-      </div>
-    </section>
+        <div className=" w-[100%] h-[100vh]">
+          <div className="flex items-center w-[100%] h-[100vh] absolute">
+            <h1 className="text-9xl text-white">ChallengeDev</h1>
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 
